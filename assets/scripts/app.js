@@ -10,7 +10,7 @@
  * Main module of the application.
  */
 angular
-  .module('klap', [])
+  .module('noerd.Klap', [])
   .run(function () {
     console.log('Main Application Run()');
   });
