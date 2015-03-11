@@ -1,0 +1,50 @@
+extends ../master
+
+
+block append head
+
+block append body
+
+block append content
+
+	section.container.container--fullscreen.container--fill
+		div.container__content
+			div.container__inner Intro
+
+	section.container
+		div.container__content
+			div.container__inner
+				div.slides
+					div.slides__cutter
+						div.slides__list
+							div.slides__slide
+								img(src="http://placehold.it/1500x500")
+							div.slides__slide
+								img(src="http://placehold.it/1500x500")
+							div.slides__slide
+								img(src="http://placehold.it/1500x500")
+					div.slides__map
+						div.slides__mapitem.slides__mapitem--active
+						div.slides__mapitem
+						div.slides__mapitem
+
+
+	section.container
+		div.container__content
+			div.container__inner
+				div.tiles
+					- for (var i = 0; i < 16; ++i) {
+						a.tiles__tile
+							div.tiles__overlay overlay
+
+							div.tiles__inner
+								img(src="http://placehold.it/450x338")
+					- }
+
+	section.container
+		div.container__content
+			div.container__inner Our services
+
+	section.container
+		div.container__content
+			div.container__inner Contact Klap

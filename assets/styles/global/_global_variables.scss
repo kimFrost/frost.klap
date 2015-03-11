@@ -1,0 +1,42 @@
+
+/* Global Variables */
+
+// Options booleans
+$mq-useAdaptive: true !global; // Media Querie mixin will skip if this ain't true
+$debug: false !global; // Show debug features
+
+
+/* COLORS */
+$color_black: #000000;
+$color_white: #ffffff;
+$color_matgrey: #151619;
+
+$color_darkgrey: #383838;
+$color_midgrey: #6F777E;
+$color_lightgrey: #D7D7D7;
+$color_almostwhite: #f7f8f8;
+
+
+/* FONTS */
+//$font_basic: "Verdane", "Myriad Pro", "Arial", Sans-serif;
+$font_basic: "Arial",  Sans-serif;
+$font_OpenSans: 'Open Sans', $font_basic;
+
+
+/* COLOR PARAMETERS */
+$param_main_background: $color_matgrey !default;
+$param_main_font_color: $color_white !default;
+
+
+
+// Media Queries, Labels and Content widths
+//@include newMediaQuerie((name: mobile, min-width: 1px, max-width: 767px, contentWidth: 100%));
+//@include newMediaQuerie((name: tablet, min-width: 768px, max-width: 1024px, contentWidth: 100%));
+//@include newMediaQuerie((name: desktop, min-width: 1025px, contentWidth: 960px, default: true));
+
+
+@include newMediaQuerie((name: 'x-small', min-width: 1px, max-width: 569px, contentWidth: 100%, gutterWidth: 15px));
+@include newMediaQuerie((name: 'small', min-width: 570px, max-width: 969px, contentWidth: 100%, gutterWidth: 30px));
+@include newMediaQuerie((name: 'medium', min-width: 970px, max-width: 1169px, contentWidth: 100%, gutterWidth: 30px));
+@include newMediaQuerie((name: 'large', min-width: 1170px, max-width: 1500px, contentWidth: 100%, gutterWidth: 50px));
+@include newMediaQuerie((name: 'x-large', min-width: 1501px, contentWidth: 1401px, gutterWidth: 50px, default: true));
