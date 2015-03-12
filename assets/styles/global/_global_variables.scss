@@ -40,3 +40,4 @@ $param_main_font_color: $color_white !default;
 @include newMediaQuerie((name: 'medium', min-width: 970px, max-width: 1169px, contentWidth: 100%, gutterWidth: 30px));
 @include newMediaQuerie((name: 'large', min-width: 1170px, max-width: 1500px, contentWidth: 100%, gutterWidth: 50px));
 @include newMediaQuerie((name: 'x-large', min-width: 1501px, contentWidth: 1401px, gutterWidth: 50px, default: true));
+@include newMediaQuerie((name: 'all', min-width: 1px));

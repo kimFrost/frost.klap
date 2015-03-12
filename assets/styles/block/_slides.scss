@@ -65,6 +65,28 @@
 	background-position: center center;
   background-size: cover;
   cursor: pointer;
+	text-align: center;
+
+	// Flexbox
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-box-align: center;
+	-webkit-flex-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+
+
   // Fix
   & + & {
     position: absolute;
@@ -133,6 +155,7 @@
   & > img {
     //border: 3px solid $color_white;
     width: 100%;
+		display: inline-block;
   }
 }
 a.slides__slide {
@@ -204,5 +227,16 @@ a.slides__slide {
 
 //--- MEDIA QUERRIES ----------------------------------------------------------//
 
+@include mediaQueries('x-small') {
+	.slides__slide img {
+		min-width: $mq-maxWidth;
+	}
+}
+
+@include mediaQueries('small') {
+	.slides__slide img {
+		min-width: $mq-maxWidth;
+	}
+}
 
 //--- KEYFRAME ANIMATIONS ----------------------------------------------------------//

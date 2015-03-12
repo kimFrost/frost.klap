@@ -5,6 +5,8 @@ $mq-useAdaptive: true !global;
 $mq-mediaQueries: () !global;
 $mq-contentWidth: null !global;
 $mq-gutterWidth: null !global;
+$mq-minWidth: null !global;
+$mq-maxWidth: null !global;
 $mq-activeMediaQuery: null;
 
 // $_map: ("key1": 1, "key2": 2)
@@ -19,6 +21,12 @@ $mq-activeMediaQuery: null;
     @if map-get($_map, default) == true and map-has-key($_map, contentWidth) {
       $mq-contentWidth: map-get($_map, contentWidth) !global; // Set the default global contentWidth
 			$mq-gutterWidth: map-get($_map, gutterWidth) !global; // Set the default global contentWidth
+			@if map-has-key($_map, min-width) {
+				$mq-minWidth: map-get($_map, min-width) !global; // Set the default global contentWidth
+			}
+			@if map-has-key($_map, max-width) {
+				$mq-maxWidth: map-get($_map, max-width) !global; // Set the default global contentWidth
+			}
     }
   }
 }
@@ -57,6 +65,12 @@ $mq-activeMediaQuery: null;
 
       $mq-contentWidth: map-get($_mq-query, contentWidth) !global; // Set global content width for use in include
       $mq-gutterWidth: map-get($_mq-query, gutterWidth) !global; // Set global gutter width for use in include
+			@if map-has-key($_mq-query, min-width) {
+				$mq-minWidth: map-get($_mq-query, min-width) !global; // Set the default global contentWidth
+			}
+			@if map-has-key($_mq-query, max-width) {
+				$mq-maxWidth: map-get($_mq-query, max-width) !global; // Set the default global contentWidth
+			}
       @media #{$device} and #{$_queryString} {
         @content;
       }

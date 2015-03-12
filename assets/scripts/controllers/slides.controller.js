@@ -96,6 +96,7 @@
 			direction = (direction === undefined) ? 1 : direction;
 			jump = (jump === undefined) ? false : jump;
 			log('switchSlide', slides);
+			log('slides.currentIndex', slides.currentIndex);
 			$timeout.cancel(slides.timer);
 			var activeIndex = slides.currentIndex;
 			var newActiveIndex;
@@ -108,8 +109,8 @@
 				}
 				else {
 					newActiveIndex = activeIndex + direction;
-					if (newActiveIndex > (slides.numOfSlides-1)) {
-						newActiveIndex = slides.numOfSlides-1;
+					if (newActiveIndex > (slides.numOfSlides - 1)) {
+						newActiveIndex = slides.numOfSlides - 1;
 					}
 				}
 			}
@@ -121,6 +122,7 @@
 					newActiveIndex = 0;
 				}
 			}
+
 			slides.currentIndex = newActiveIndex;
 			setPos();
 			setAutoPlay(direction);
