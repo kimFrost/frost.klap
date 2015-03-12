@@ -4,6 +4,7 @@
 /* COLORS */
 /* FONTS */
 /* COLOR PARAMETERS */
+/* FONT PARAMETERS */
 /* Global font Calculation */
 /* line 80, ../assets/styles/global/_global_fonts.scss */
 html {
@@ -181,74 +182,114 @@ html {
   .container__content {
     width: 100%;
   }
+
+  /* line 127, ../assets/styles/block/_container.scss */
+  .container--xs-expand {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 130, ../assets/styles/block/_container.scss */
+  .container--xs-expand .container__content {
+    width: 100%;
+  }
 }
 @media all and (min-width: 570px) and (max-width: 969px) {
-  /* line 130, ../assets/styles/block/_container.scss */
+  /* line 137, ../assets/styles/block/_container.scss */
   .container {
     padding-right: 30px;
     padding-left: 30px;
   }
-  /* line 133, ../assets/styles/block/_container.scss */
+  /* line 140, ../assets/styles/block/_container.scss */
   .container:last-child {
     margin-bottom: 30px;
   }
-  /* line 136, ../assets/styles/block/_container.scss */
+  /* line 143, ../assets/styles/block/_container.scss */
   .container + .container {
     margin-top: 30px;
   }
 
-  /* line 140, ../assets/styles/block/_container.scss */
+  /* line 147, ../assets/styles/block/_container.scss */
   .container__content {
+    width: 100%;
+  }
+
+  /* line 150, ../assets/styles/block/_container.scss */
+  .container--s-expand {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 153, ../assets/styles/block/_container.scss */
+  .container--s-expand .container__content {
     width: 100%;
   }
 }
 @media all and (min-width: 970px) and (max-width: 1169px) {
-  /* line 146, ../assets/styles/block/_container.scss */
+  /* line 160, ../assets/styles/block/_container.scss */
   .container {
     padding-right: 30px;
     padding-left: 30px;
   }
-  /* line 149, ../assets/styles/block/_container.scss */
+  /* line 163, ../assets/styles/block/_container.scss */
   .container:last-child {
     margin-bottom: 30px;
   }
-  /* line 152, ../assets/styles/block/_container.scss */
+  /* line 166, ../assets/styles/block/_container.scss */
   .container + .container {
     margin-top: 30px;
   }
 
-  /* line 156, ../assets/styles/block/_container.scss */
+  /* line 170, ../assets/styles/block/_container.scss */
   .container__content {
+    width: 100%;
+  }
+
+  /* line 173, ../assets/styles/block/_container.scss */
+  .container--m-expand {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 176, ../assets/styles/block/_container.scss */
+  .container--m-expand .container__content {
     width: 100%;
   }
 }
 @media all and (min-width: 1170px) and (max-width: 1500px) {
-  /* line 162, ../assets/styles/block/_container.scss */
+  /* line 183, ../assets/styles/block/_container.scss */
   .container {
     padding-right: 50px;
     padding-left: 50px;
   }
-  /* line 165, ../assets/styles/block/_container.scss */
+  /* line 186, ../assets/styles/block/_container.scss */
   .container:last-child {
     margin-bottom: 50px;
   }
-  /* line 168, ../assets/styles/block/_container.scss */
+  /* line 189, ../assets/styles/block/_container.scss */
   .container + .container {
     margin-top: 50px;
   }
 
-  /* line 172, ../assets/styles/block/_container.scss */
+  /* line 193, ../assets/styles/block/_container.scss */
   .container__content {
+    width: 100%;
+  }
+
+  /* line 196, ../assets/styles/block/_container.scss */
+  .container--l-expand {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 199, ../assets/styles/block/_container.scss */
+  .container--l-expand .container__content {
     width: 100%;
   }
 }
 @media all and (min-width: 1px) {
-  /* line 178, ../assets/styles/block/_container.scss */
+  /* line 206, ../assets/styles/block/_container.scss */
   .container--expand {
     padding-left: 0;
     padding-right: 0;
   }
-  /* line 181, ../assets/styles/block/_container.scss */
+  /* line 209, ../assets/styles/block/_container.scss */
   .container--expand .container__content {
     width: 100%;
   }
@@ -600,20 +641,32 @@ a.slides__slide {
   width: 100%;
   overflow: hidden;
   z-index: 1;
+  font-family: "Proxima N W01 Reg", "Arial", Sans-serif;
+  text-transform: uppercase;
+}
+/* line 42, ../assets/styles/global/_global_fonts.scss */
+.tiles {
+  font-size: 20px;
+  font-size: 1.1111111111rem;
 }
 
-/* line 8, ../assets/styles/block/_tiles.scss */
+/* line 11, ../assets/styles/block/_tiles.scss */
 .tiles,
 .tiles__tile,
 .tiles__inner,
-.tiles__overlay {
+.tiles__overlay,
+.tiles__overlay::before {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
 
-/* line 19, ../assets/styles/block/_tiles.scss */
+/* line 23, ../assets/styles/block/_tiles.scss */
 .tiles__tile {
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
   display: block;
   float: left;
   width: 25%;
@@ -622,11 +675,26 @@ a.slides__slide {
   position: relative;
   opacity: 1;
 }
-/* line 29, ../assets/styles/block/_tiles.scss */
+/* line 34, ../assets/styles/block/_tiles.scss */
+.tiles__tile:focus .tiles__inner, .tiles__tile:hover .tiles__inner {
+  color: transparent;
+  font-size: 0;
+}
+/* line 39, ../assets/styles/block/_tiles.scss */
 .tiles__tile:focus .tiles__overlay, .tiles__tile:hover .tiles__overlay {
+  background-color: transparent;
+  opacity: 1;
+  font-size: inherit;
+}
+/* line 43, ../assets/styles/block/_tiles.scss */
+.tiles__tile:focus .tiles__overlay::before, .tiles__tile:hover .tiles__overlay::before {
+  -moz-transform: scale(1, 1) rotate(45deg);
+  -ms-transform: scale(1, 1) rotate(45deg);
+  -webkit-transform: scale(1, 1) rotate(45deg);
+  transform: scale(1, 1) rotate(45deg);
   opacity: 1;
 }
-/* line 33, ../assets/styles/block/_tiles.scss */
+/* line 49, ../assets/styles/block/_tiles.scss */
 .tiles__tile:before {
   -moz-transition: all 300ms ease;
   -o-transition: all 300ms ease;
@@ -642,30 +710,6 @@ a.slides__slide {
   opacity: 1;
 }
 
-/* line 47, ../assets/styles/block/_tiles.scss */
-a.tiles__tile {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-}
-/* line 49, ../assets/styles/block/_tiles.scss */
-a.tiles__tile:hover {
-  opacity: 1.0;
-}
-/* line 55, ../assets/styles/block/_tiles.scss */
-a.tiles__tile:hover .tiles__inner {
-  -moz-transform: rotate(10deg) scale(1.2);
-  -ms-transform: rotate(10deg) scale(1.2);
-  -webkit-transform: rotate(10deg) scale(1.2);
-  transform: rotate(10deg) scale(1.2);
-}
-/* line 59, ../assets/styles/block/_tiles.scss */
-a.tiles__tile:active {
-  opacity: 0.7;
-}
-
 /* line 64, ../assets/styles/block/_tiles.scss */
 .tiles__inner {
   -moz-transition: all 300ms ease;
@@ -674,6 +718,7 @@ a.tiles__tile:active {
   transition: all 300ms ease;
   display: block;
   position: absolute;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
@@ -695,29 +740,38 @@ a.tiles__tile:active {
   justify-content: center;
 }
 /* line 91, ../assets/styles/block/_tiles.scss */
+.tiles__inner + .tiles__inner {
+  z-index: 15;
+}
+/* line 94, ../assets/styles/block/_tiles.scss */
 .tiles__inner > img, .tiles__inner > a > img {
   width: 100%;
   display: block;
   margin: 0;
 }
+/* line 100, ../assets/styles/block/_tiles.scss */
+.tiles__inner > b {
+  font-family: "Proxima N W01 Xbold", "Arial", Sans-serif;
+}
 
-/* line 98, ../assets/styles/block/_tiles.scss */
+/* line 104, ../assets/styles/block/_tiles.scss */
 .tiles__overlay {
-  -moz-transition: opacity 300ms ease, -moz-transform 300ms ease;
-  -o-transition: opacity 300ms ease, -o-transform 300ms ease;
-  -webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
-  transition: opacity 300ms ease, transform 300ms ease;
+  -moz-transition: opacity 300ms ease, -moz-transform 300ms ease, background-color 600ms ease;
+  -o-transition: opacity 300ms ease, -o-transform 300ms ease, background-color 600ms ease;
+  -webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease, background-color 600ms ease;
+  transition: opacity 300ms ease, transform 300ms ease, background-color 600ms ease;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: block;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.3);
+  font-family: "Proxima N W01 Xbold", "Arial", Sans-serif;
   color: #ffffff;
   text-align: center;
   z-index: 10;
-  opacity: 0;
+  font-size: 0;
   padding: 10px;
   display: -webkit-box;
   display: -moz-box;
@@ -735,47 +789,62 @@ a.tiles__tile:active {
   -webkit-justify-content: center;
   justify-content: center;
 }
-
-/*
-@include mediaQueries(tablet) {
-	.tiles__tile {
-		width: (100% / 2);
-		padding-bottom: (100% / 2);
-	}
-	.tiles--line3 {
-		.tiles__tile {
-			width: (100% / 2);
-			padding-bottom: (100% / 2);
-		}
-	}
+/* line 140, ../assets/styles/block/_tiles.scss */
+.tiles__overlay::before {
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  -moz-transform: scale(0, 0) rotate(45deg);
+  -ms-transform: scale(0, 0) rotate(45deg);
+  -webkit-transform: scale(0, 0) rotate(45deg);
+  transform: scale(0, 0) rotate(45deg);
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: calc(50% - 70px);
+  left: calc(50% - 70px);
+  opacity: 0;
+  border: 3px solid #ffffff;
+  height: 140px;
+  width: 140px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-@include mediaQueries(narrowdesktop) {
-	.tiles__tile {
-		width: (100% / 2);
-		padding-bottom: (100% / 2);
-	}
-	.tiles--line3 {
-		.tiles__tile {
-			width: (100% / 3);
-			padding-bottom: (100% / 3);
-		}
-	}
+@media all and (min-width: 1px) and (max-width: 569px) {
+  /* line 176, ../assets/styles/block/_tiles.scss */
+  .tiles__tile {
+    width: 100%;
+    padding-bottom: 75%;
+  }
 }
-
-@include mediaQueries(desktop) {
-	.tiles__tile {
-		width: (100% / 2);
-		padding-bottom: (100% / 2);
-	}
-	.tiles--line3 {
-		.tiles__tile {
-			width: (100% / 3);
-			padding-bottom: (100% / 3);
-		}
-	}
+@media all and (min-width: 570px) and (max-width: 969px) {
+  /* line 183, ../assets/styles/block/_tiles.scss */
+  .tiles__tile {
+    width: 50%;
+    padding-bottom: 37.5%;
+  }
 }
-*/
+@media all and (min-width: 970px) and (max-width: 1169px) {
+  /* line 190, ../assets/styles/block/_tiles.scss */
+  .tiles__tile {
+    width: 33.3333333333%;
+    padding-bottom: 25%;
+  }
+}
+@media all and (min-width: 1170px) and (max-width: 1500px) {
+  /* line 197, ../assets/styles/block/_tiles.scss */
+  .tiles__tile {
+    width: 25%;
+    padding-bottom: 18.75%;
+  }
+}
 /* line 6, ../assets/styles/block/_vimeo.scss */
 .vimeo {
   position: relative;

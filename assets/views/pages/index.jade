@@ -12,7 +12,7 @@ block append content
 			div.vimeo
 				//iframe(src="https://player.vimeo.com/video/111753765?autoplay=1&loop=1", width="1500", height="642", frameborder="0", webkitallowfullscreen, mozallowfullscreen, allowfullscreen)
 
-	section.container
+	section.container.container--xs-expand.container--s-expand
 		div.container__content
 			div.container__inner
 				div.slides(data-ng-controller="SlidesCtrl as slides" data-slides="5", data-slides-autoplay="true")
@@ -42,10 +42,12 @@ block append content
 				div.tiles
 					- for (var i = 0; i < 16; ++i) {
 						a.tiles__tile
-							div.tiles__overlay overlay
+							figcaption.tiles__overlay Watch
 							div.tiles__inner
 								img(src="http://placehold.it/450x338")
-							div.tiles__inner #{i}
+							div.tiles__inner
+								| Madhouse
+								b Collection
 					- }
 
 	section.container

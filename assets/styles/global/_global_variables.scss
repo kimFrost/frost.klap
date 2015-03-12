@@ -20,20 +20,25 @@ $color_almostwhite: #f7f8f8;
 /* FONTS */
 //$font_basic: "Verdane", "Myriad Pro", "Arial", Sans-serif;
 $font_basic: "Arial",  Sans-serif;
-$font_OpenSans: 'Open Sans', $font_basic;
+//$font_OpenSans: 'Open Sans', $font_basic;
+
+$font_proxima-regular: 'Proxima N W01 Reg', $font_basic;
+$font_proxima-xbold: 'Proxima N W01 Xbold', $font_basic;
 
 
 /* COLOR PARAMETERS */
-$param_main_background: $color_matgrey !default;
-$param_main_font_color: $color_white !default;
+$param_main-background: $color_matgrey !default;
+$param_main-font-color: $color_white !default;
 
+/* FONT PARAMETERS */
+$param_tiles_font1: $font_proxima-regular;
+$param_tiles_font2: $font_proxima-xbold;
 
 
 // Media Queries, Labels and Content widths
 //@include newMediaQuerie((name: mobile, min-width: 1px, max-width: 767px, contentWidth: 100%));
 //@include newMediaQuerie((name: tablet, min-width: 768px, max-width: 1024px, contentWidth: 100%));
 //@include newMediaQuerie((name: desktop, min-width: 1025px, contentWidth: 960px, default: true));
-
 
 @include newMediaQuerie((name: 'x-small', min-width: 1px, max-width: 569px, contentWidth: 100%, gutterWidth: 15px));
 @include newMediaQuerie((name: 'small', min-width: 570px, max-width: 969px, contentWidth: 100%, gutterWidth: 30px));

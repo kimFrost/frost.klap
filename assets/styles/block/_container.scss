@@ -124,6 +124,13 @@
 	.container__content {
 		width: $mq-contentWidth;
 	}
+	.container--xs-expand {
+		padding-left: 0;
+		padding-right: 0;
+		.container__content {
+			width: 100%;
+		}
+	}
 }
 
 @include mediaQueries('small') {
@@ -139,6 +146,13 @@
 	}
 	.container__content {
 		width: $mq-contentWidth;
+	}
+	.container--s-expand {
+		padding-left: 0;
+		padding-right: 0;
+		.container__content {
+			width: 100%;
+		}
 	}
 }
 
@@ -156,6 +170,13 @@
 	.container__content {
 		width: $mq-contentWidth;
 	}
+	.container--m-expand {
+		padding-left: 0;
+		padding-right: 0;
+		.container__content {
+			width: 100%;
+		}
+	}
 }
 
 @include mediaQueries('large') {
@@ -171,6 +192,13 @@
 	}
 	.container__content {
 		width: $mq-contentWidth;
+	}
+	.container--l-expand {
+		padding-left: 0;
+		padding-right: 0;
+		.container__content {
+			width: 100%;
+		}
 	}
 }
 

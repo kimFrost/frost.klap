@@ -1,14 +1,18 @@
 
 .tiles {
+	@include fontSize(zeta, 0);
 	width: 100%;
 	overflow: hidden;
 	z-index: 1;
+	font-family: $param_tiles_font1;
+	text-transform: uppercase;
 }
 
 .tiles,
 .tiles__tile,
 .tiles__inner,
-.tiles__overlay {
+.tiles__overlay,
+.tiles__overlay::before  {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -17,6 +21,7 @@
 //--- ELEMENTS -------------------------------------------------------//
 
 .tiles__tile {
+	@include transition(all 300ms ease);
 	display: block;
 	float: left;
 	width: (100% / 4);
@@ -26,8 +31,19 @@
 	opacity: 1;
 	&:focus,
 	&:hover {
+		.tiles__inner {
+			//opacity: 0;
+			color: transparent;
+			font-size: 0;
+		}
 		.tiles__overlay {
+			background-color: transparent;
 			opacity: 1;
+			font-size: inherit;
+			&::before {
+				@include transform(scale(1, 1) rotate(45deg));
+				opacity: 1;
+			}
 		}
 	}
 	&:before {
@@ -44,27 +60,12 @@
 		//z-index: 15;
 	}
 }
-a.tiles__tile {
-	@include noUserSelect();
-	&:hover {
-		//opacity: 0.8;
-		opacity: 1.0;
-		&:before {
-			//@include box-shadow(inset 0px 0px 0px 15px $color_heart);
-		}
-		.tiles__inner {
-			@include transform(rotate(10deg) scale(1.2));
-		}
-	}
-	&:active {
-		opacity: 0.7;
-	}
-}
 
 .tiles__inner {
 	@include transition(all 300ms ease);
 	display: block;
 	position: absolute;
+	z-index: 1;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -87,27 +88,35 @@ a.tiles__tile {
 	-ms-flex-pack: center;
 	-webkit-justify-content: center;
 	justify-content: center;
-
+	& + & {
+		z-index: 15;
+	}
 	& > img,
 	& > a > img {
 		width: 100%;
 		display: block;
 		margin: 0;
 	}
+	& > b {
+		font-family: $param_tiles_font2;
+	}
 }
 .tiles__overlay {
-	@include transition(opacity 300ms ease, transform 300ms ease);
+	@include transition(opacity 300ms ease, transform 300ms ease, background-color 600ms ease);
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	display: block;
-	background-color: rgba($color_black, 0.90);
+	background-color: rgba($color_black, 0.3);
+	font-family: $param_tiles_font2;
 	color: $color_white;
 	text-align: center;
 	z-index: 10;
-  opacity: 0;
+  //opacity: 0;
+	font-size: 0;
+
   padding: 10px;
 
 	display: -webkit-box;
@@ -127,6 +136,31 @@ a.tiles__tile {
 	-ms-flex-pack: center;
 	-webkit-justify-content: center;
 	justify-content: center;
+
+	&::before {
+		@include transform-origin(50%, 50%);
+		@include transition(all 300ms ease);
+		@include transform(scale(0, 0) rotate(45deg));
+		content: "";
+		display: block;
+		position: absolute;
+		z-index: 1;
+		top: calc(50% - 70px);
+		left: calc(50% - 70px);
+		opacity: 0;
+		border: 3px solid $color_white;
+
+
+		//padding: 80px;
+		height: 140px;
+		width: 140px;
+
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+
+		//-webkit-transform: translate3d(-50%,-50%,0) rotate3d(0,0,1,-45deg) scale3d(0,0,1);
+		//transform: translate3d(-50%,-50%,0) rotate3d(0,0,1,-45deg) scale3d(0,0,1);
+	}
 }
 
 
@@ -134,48 +168,36 @@ a.tiles__tile {
 
 
 
+
 //--- MEDIA QUERIES -------------------------------------------------------//
 
 
-/*
-@include mediaQueries(tablet) {
+@include mediaQueries('x-small') {
 	.tiles__tile {
-		width: (100% / 2);
-		padding-bottom: (100% / 2);
-	}
-	.tiles--line3 {
-		.tiles__tile {
-			width: (100% / 2);
-			padding-bottom: (100% / 2);
-		}
+		width: (100% / 1);
+		padding-bottom: (100% / 1 * (3 / 4));
 	}
 }
 
-@include mediaQueries(narrowdesktop) {
+@include mediaQueries('small') {
 	.tiles__tile {
 		width: (100% / 2);
-		padding-bottom: (100% / 2);
-	}
-	.tiles--line3 {
-		.tiles__tile {
-			width: (100% / 3);
-			padding-bottom: (100% / 3);
-		}
+		padding-bottom: (100% / 2 * (3 / 4));
 	}
 }
 
-@include mediaQueries(desktop) {
+@include mediaQueries('medium') {
 	.tiles__tile {
-		width: (100% / 2);
-		padding-bottom: (100% / 2);
-	}
-	.tiles--line3 {
-		.tiles__tile {
-			width: (100% / 3);
-			padding-bottom: (100% / 3);
-		}
+		width: (100% / 3);
+		padding-bottom: (100% / 3 * (3 / 4));
 	}
 }
-*/
+
+@include mediaQueries('large') {
+	.tiles__tile {
+		width: (100% / 4);
+		padding-bottom: (100% / 4 * (3 / 4));
+	}
+}
 
 
