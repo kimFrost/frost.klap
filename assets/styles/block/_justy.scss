@@ -70,10 +70,10 @@
   background-color: transparent;
   &:before {
     @include transform(rotate(45deg) translate(0%, 0%));
-    background-color: $color_black;
+    //background-color: $color_black;
   }
   &:after {
     @include transform(rotate(-45deg) translate(0%, 0%));
-    background-color: $color_black;
+    //background-color: $color_black;
   }
 }

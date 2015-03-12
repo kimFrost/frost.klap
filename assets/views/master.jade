@@ -13,14 +13,14 @@ html(data-ng-app="noerd.Klap", lang="da")
 		block head
 		// Fonts
 
-	body.klap
+	body.klap(data-ng-controller="MainCtrl as main")
 
 		div.klap__logo
 		header.klap__header
-			div.klap__menutoggle
-				div.justy
+			div.klap__menutoggle(data-ng-click="main.toggleMenu()")
+				div.justy(data-ng-class="{'justy--active':main.states.showMenu}")
 
-		div.klap__overlay
+		div.klap__overlay(data-ng-class="{'klap__overlay--show':main.states.showMenu}")
 			div.klap__menu
 				div.klap__menuitem Intro
 				div.klap__menuitem Who we are
@@ -36,4 +36,5 @@ html(data-ng-app="noerd.Klap", lang="da")
 
 
 		script(src="/assets/scripts/app.js")
+		script(src="/assets/scripts/controllers/main.controller.js")
 		script(src="/assets/scripts/controllers/slides.controller.js")

@@ -11,14 +11,14 @@
     <script src="/assets/bower_components/angular/angular.js"></script>
     <!-- Fonts-->
   </head>
-  <body class="klap">
+  <body data-ng-controller="MainCtrl as main" class="klap">
     <div class="klap__logo"></div>
     <header class="klap__header">
-      <div class="klap__menutoggle">
-        <div class="justy"></div>
+      <div data-ng-click="main.toggleMenu()" class="klap__menutoggle">
+        <div data-ng-class="{'justy--active':main.states.showMenu}" class="justy"></div>
       </div>
     </header>
-    <div class="klap__overlay">
+    <div data-ng-class="{'klap__overlay--show':main.states.showMenu}" class="klap__overlay">
       <div class="klap__menu">
         <div class="klap__menuitem">Intro</div>
         <div class="klap__menuitem">Who we are</div>
@@ -138,6 +138,7 @@
       </div>
     </section>
     <script src="/assets/scripts/app.js"></script>
+    <script src="/assets/scripts/controllers/main.controller.js"></script>
     <script src="/assets/scripts/controllers/slides.controller.js"></script>
   </body>
 </html>

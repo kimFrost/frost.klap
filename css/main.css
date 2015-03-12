@@ -68,7 +68,7 @@ html {
 
 /* line 61, ../assets/styles/block/_klap.scss */
 .klap__overlay {
-  display: block;
+  display: none;
   position: fixed;
   left: 0;
   top: 0;
@@ -131,7 +131,7 @@ html {
 }
 
 /* line 121, ../assets/styles/block/_klap.scss */
-.klap__menu--show {
+.klap__overlay--show {
   display: block;
 }
 
@@ -460,7 +460,6 @@ html {
   -ms-transform: rotate(45deg) translate(0%, 0%);
   -webkit-transform: rotate(45deg) translate(0%, 0%);
   transform: rotate(45deg) translate(0%, 0%);
-  background-color: #000000;
 }
 /* line 75, ../assets/styles/block/_justy.scss */
 .justy--active:after {
@@ -468,7 +467,6 @@ html {
   -ms-transform: rotate(-45deg) translate(0%, 0%);
   -webkit-transform: rotate(-45deg) translate(0%, 0%);
   transform: rotate(-45deg) translate(0%, 0%);
-  background-color: #000000;
 }
 
 /* NOTES */

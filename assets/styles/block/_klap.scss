@@ -59,7 +59,7 @@
 }
 
 .klap__overlay {
-	display: block;
+	display: none;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -118,7 +118,7 @@
 
 //--- MODIFIERS ----------------------------------------------------------//
 
-.klap__menu--show {
+.klap__overlay--show {
 	display: block;
 }
 
