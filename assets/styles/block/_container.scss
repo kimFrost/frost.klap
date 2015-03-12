@@ -51,6 +51,9 @@
     display: block;
     clear: both;
   }
+	& + & {
+		margin-top: $mq-gutterWidth;
+	}
   @include onlyInDebug() {
     background-color: gold;
   }
@@ -124,6 +127,11 @@
 	.container__content {
 		width: $mq-contentWidth;
 	}
+	.container__inner {
+		& + & {
+			margin-top: $mq-gutterWidth;
+		}
+	}
 	.container--xs-expand {
 		padding-left: 0;
 		padding-right: 0;
@@ -146,6 +154,11 @@
 	}
 	.container__content {
 		width: $mq-contentWidth;
+	}
+	.container__inner {
+		& + & {
+			margin-top: $mq-gutterWidth;
+		}
 	}
 	.container--s-expand {
 		padding-left: 0;
@@ -170,6 +183,11 @@
 	.container__content {
 		width: $mq-contentWidth;
 	}
+	.container__inner {
+		& + & {
+			margin-top: $mq-gutterWidth;
+		}
+	}
 	.container--m-expand {
 		padding-left: 0;
 		padding-right: 0;
@@ -192,6 +210,11 @@
 	}
 	.container__content {
 		width: $mq-contentWidth;
+	}
+	.container__inner {
+		& + & {
+			margin-top: $mq-gutterWidth;
+		}
 	}
 	.container--l-expand {
 		padding-left: 0;

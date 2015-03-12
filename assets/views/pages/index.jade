@@ -36,8 +36,20 @@ block append content
 						div.slides__mapitem(data-ng-click="slides.switchSlide(3, true)", data-ng-class="{'slides__mapitem--active': slides.checkActive(3)}")
 						div.slides__mapitem(data-ng-click="slides.switchSlide(4, true)", data-ng-class="{'slides__mapitem--active': slides.checkActive(4)}")
 
+
 	section.container
 		div.container__content
+			div.container__inner
+				div.btn.btn--group
+					div.btn.btn--active All
+					div.btn Commercial
+					div.btn Corporate
+					div.btn Fashion
+					div.btn Images
+					div.btn Music videos
+					div.btn Playground
+					div.btn Sound
+					div.btn Video
 			div.container__inner
 				div.tiles
 					- for (var i = 0; i < 16; ++i) {

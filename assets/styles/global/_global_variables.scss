@@ -10,6 +10,7 @@ $debug: false !global; // Show debug features
 $color_black: #000000;
 $color_white: #ffffff;
 $color_matgrey: #151619;
+$color_darkgrey: #38393b;
 
 $color_darkgrey: #383838;
 $color_midgrey: #6F777E;
@@ -21,7 +22,6 @@ $color_almostwhite: #f7f8f8;
 //$font_basic: "Verdane", "Myriad Pro", "Arial", Sans-serif;
 $font_basic: "Arial",  Sans-serif;
 //$font_OpenSans: 'Open Sans', $font_basic;
-
 $font_proxima-regular: 'Proxima N W01 Reg', $font_basic;
 $font_proxima-xbold: 'Proxima N W01 Xbold', $font_basic;
 
@@ -30,9 +30,18 @@ $font_proxima-xbold: 'Proxima N W01 Xbold', $font_basic;
 $param_main-background: $color_matgrey !default;
 $param_main-font-color: $color_white !default;
 
+$param_menu-font: $font_proxima-xbold;
+
+$param_btn-color: $color_matgrey;
+$param_btn-background: $color_darkgrey;
+$param_btn-active-background: $color_white;
+$param_btn-font: $font_proxima-regular;
+
+
 /* FONT PARAMETERS */
 $param_tiles_font1: $font_proxima-regular;
 $param_tiles_font2: $font_proxima-xbold;
+
 
 
 // Media Queries, Labels and Content widths

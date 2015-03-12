@@ -166,7 +166,7 @@ a.slides__slide {
 	display: block;
 	width: 100%;
 	position: absolute;
-	bottom: 0px;
+	bottom: 20px;
 	text-align: center;
 	z-index: 40;
 }
@@ -174,13 +174,18 @@ a.slides__slide {
 .slides__mapitem {
 	@include border-radius(50% 50% 50% 50%);
 	display: inline-block;
-	width: 18px;
-	height: 18px;
+	width: 16px;
+	height: 16px;
 	overflow: hidden;
 	background-color: $color_white;
-	border: 1px solid $color_black;
+	//border: 1px solid $color_black;
 	position: relative;
 	cursor: pointer;
+	opacity: 0.3;
+	& + & {
+		margin-left: 10px;
+	}
+	/*
 	&:before {
 		@include border-radius(50% 50% 50% 50%);
 		content: "";
@@ -194,6 +199,7 @@ a.slides__slide {
 		margin-left: -5px;
 		background-color: $color_white;
 	}
+	*/
 }
 
 
@@ -219,7 +225,8 @@ a.slides__slide {
 }
 
 .slides__mapitem--active {
-	&:before {
+	opacity: 1;
+	&::before {
 		background-color: $color_black;
 	}
 }
