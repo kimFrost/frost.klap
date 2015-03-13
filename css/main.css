@@ -63,10 +63,11 @@ html {
   position: absolute;
   right: 50px;
   top: 50px;
-  width: 18px;
+  width: 24px;
+  height: 24px;
 }
 
-/* line 61, ../assets/styles/block/_klap.scss */
+/* line 62, ../assets/styles/block/_klap.scss */
 .klap__overlay {
   display: none;
   position: fixed;
@@ -78,7 +79,7 @@ html {
   z-index: 60;
 }
 
-/* line 72, ../assets/styles/block/_klap.scss */
+/* line 73, ../assets/styles/block/_klap.scss */
 .klap__menu {
   -moz-transition: all 300ms ease;
   -o-transition: all 300ms ease;
@@ -118,19 +119,19 @@ html {
   font-size: 1.7777777778rem;
 }
 
-/* line 109, ../assets/styles/block/_klap.scss */
+/* line 110, ../assets/styles/block/_klap.scss */
 .klap__menuitem {
   display: block;
   clear: both;
   width: 100%;
   text-align: center;
 }
-/* line 114, ../assets/styles/block/_klap.scss */
+/* line 115, ../assets/styles/block/_klap.scss */
 .klap__menuitem + .klap__menuitem {
   margin-top: 40px;
 }
 
-/* line 121, ../assets/styles/block/_klap.scss */
+/* line 122, ../assets/styles/block/_klap.scss */
 .klap__overlay--show {
   display: block;
 }
@@ -396,16 +397,15 @@ html {
   -webkit-transition: background-color 300ms ease, -webkit-transform 300ms ease;
   transition: background-color 300ms ease, transform 300ms ease;
   width: 100%;
-  min-width: 24px;
   height: 4px;
   position: absolute;
   top: 50%;
   margin-top: -2px;
-  background-color: #ffffff;
-  z-index: -1;
+  background-color: white;
+  z-index: 1;
 }
 /* line 22, ../assets/styles/block/_justy.scss */
-.justy:before, .justy:after {
+.justy::before, .justy::after {
   -moz-transition: all 300ms ease;
   -o-transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
@@ -419,7 +419,7 @@ html {
   background-color: #ffffff;
 }
 /* line 33, ../assets/styles/block/_justy.scss */
-.justy:before {
+.justy::before {
   -moz-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   -webkit-transform-origin: 50% 50%;
@@ -428,10 +428,10 @@ html {
   -ms-transform: translate(0%, -200%);
   -webkit-transform: translate(0%, -200%);
   transform: translate(0%, -200%);
-  top: 0%;
+  top: 0;
 }
 /* line 40, ../assets/styles/block/_justy.scss */
-.justy:after {
+.justy::after {
   -moz-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   -webkit-transform-origin: 50% 50%;
@@ -440,7 +440,7 @@ html {
   -ms-transform: translate(0%, 200%);
   -webkit-transform: translate(0%, 200%);
   transform: translate(0%, 200%);
-  top: 0%;
+  top: 0;
 }
 
 /* line 56, ../assets/styles/block/_justy.scss */
@@ -452,17 +452,17 @@ html {
 
 /* line 68, ../assets/styles/block/_justy.scss */
 .justy--active {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
 }
-/* line 71, ../assets/styles/block/_justy.scss */
-.justy--active:before {
+/* line 70, ../assets/styles/block/_justy.scss */
+.justy--active::before {
   -moz-transform: rotate(45deg) translate(0%, 0%);
   -ms-transform: rotate(45deg) translate(0%, 0%);
   -webkit-transform: rotate(45deg) translate(0%, 0%);
   transform: rotate(45deg) translate(0%, 0%);
 }
-/* line 75, ../assets/styles/block/_justy.scss */
-.justy--active:after {
+/* line 74, ../assets/styles/block/_justy.scss */
+.justy--active::after {
   -moz-transform: rotate(-45deg) translate(0%, 0%);
   -ms-transform: rotate(-45deg) translate(0%, 0%);
   -webkit-transform: rotate(-45deg) translate(0%, 0%);

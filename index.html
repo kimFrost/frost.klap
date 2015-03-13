@@ -15,10 +15,9 @@
   <body data-ng-controller="MainCtrl as main" class="klap">
     <div class="klap__logo"></div>
     <header class="klap__header">
-      <div data-ng-click="main.toggleOverlay()" data-ng-hide="!main.overlays.menu.states.show" class="klap__menutoggle">
-        <div data-ng-class="{'justy--active': main.overlays.menu.states.show}" class="justy"></div>
-      </div>
-      <div data-ng-click="main.toggleOverlay('menu')" data-ng-hide="main.overlays.menu.states.show" class="klap__menutoggle">
+      <!--div.klap__menutoggle(data-ng-click="main.toggleOverlay()", data-ng-hide="!main.overlays.menu.states.show")div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")
+      -->
+      <div data-ng-click="main.toggleOverlay('menu')" class="klap__menutoggle">
         <div data-ng-class="{'justy--active': main.overlays.menu.states.show}" class="justy"></div>
       </div>
     </header>

@@ -19,9 +19,9 @@ html(data-ng-app="noerd.Klap", lang="da")
 		div.klap__logo
 
 		header.klap__header
-			div.klap__menutoggle(data-ng-click="main.toggleOverlay()", data-ng-hide="!main.overlays.menu.states.show")
+			//div.klap__menutoggle(data-ng-click="main.toggleOverlay()", data-ng-hide="!main.overlays.menu.states.show")
 				div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")
-			div.klap__menutoggle(data-ng-click="main.toggleOverlay('menu')", data-ng-hide="main.overlays.menu.states.show")
+			div.klap__menutoggle(data-ng-click="main.toggleOverlay('menu')")
 				div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")
 
 		div.klap__overlay(data-ng-class="{'klap__overlay--show': main.overlays.menu.states.show}")
