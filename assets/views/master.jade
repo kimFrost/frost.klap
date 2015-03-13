@@ -9,6 +9,7 @@ html(data-ng-app="noerd.Klap", lang="da")
 		link(rel='stylesheet', href='http://fast.fonts.net/cssapi/3b2e6dd0-e910-423a-b15e-9ccfcadb3d28.css')
 		// Main app js
 		script(src="/assets/bower_components/angular/angular.js")
+		script(src="/assets/bower_components/angular-sanitize/angular-sanitize.js")
 
 		block head
 		// Fonts
@@ -16,16 +17,25 @@ html(data-ng-app="noerd.Klap", lang="da")
 	body.klap(data-ng-controller="MainCtrl as main")
 
 		div.klap__logo
-		header.klap__header
-			div.klap__menutoggle(data-ng-click="main.toggleMenu()")
-				div.justy(data-ng-class="{'justy--active':main.states.showMenu}")
 
-		div.klap__overlay(data-ng-class="{'klap__overlay--show':main.states.showMenu}")
+		header.klap__header
+			div.klap__menutoggle(data-ng-click="main.toggleOverlay()", data-ng-hide="!main.overlays.menu.states.show")
+				div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")
+			div.klap__menutoggle(data-ng-click="main.toggleOverlay('menu')", data-ng-hide="main.overlays.menu.states.show")
+				div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")
+
+		div.klap__overlay(data-ng-class="{'klap__overlay--show': main.overlays.menu.states.show}")
+			div.klap__logo
 			div.klap__menu
 				div.klap__menuitem Intro
 				div.klap__menuitem Who we are
 				div.klap__menuitem Cases
 				div.klap__menuitem Contact
+
+		div.klap__overlay(data-ng-class="{'klap__overlay--show': main.overlays.case.states.show}")
+			section.container
+				div.container__content
+					div.container__inner(data-ng-bind-html="main.overlays.case.html")
 
 		block body
 

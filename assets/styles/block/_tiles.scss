@@ -145,15 +145,16 @@
 		display: block;
 		position: absolute;
 		z-index: 1;
-		top: calc(50% - 70px);
-		left: calc(50% - 70px);
+		//top: calc(50% - 70px);
+		//left: calc(50% - 70px);
+		top: 25%;
+		left: 30%;
 		opacity: 0;
 		border: 3px solid $color_white;
 
 
-		//padding: 80px;
-		height: 140px;
-		width: 140px;
+		//padding: 70px;
+		padding: 20%;
 
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;

@@ -907,39 +907,38 @@ a.slides__slide {
   display: block;
   position: absolute;
   z-index: 1;
-  top: calc(50% - 70px);
-  left: calc(50% - 70px);
+  top: 25%;
+  left: 30%;
   opacity: 0;
   border: 3px solid #ffffff;
-  height: 140px;
-  width: 140px;
+  padding: 20%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 @media all and (min-width: 1px) and (max-width: 569px) {
-  /* line 176, ../assets/styles/block/_tiles.scss */
+  /* line 177, ../assets/styles/block/_tiles.scss */
   .tiles__tile {
     width: 100%;
     padding-bottom: 75%;
   }
 }
 @media all and (min-width: 570px) and (max-width: 969px) {
-  /* line 183, ../assets/styles/block/_tiles.scss */
+  /* line 184, ../assets/styles/block/_tiles.scss */
   .tiles__tile {
     width: 50%;
     padding-bottom: 37.5%;
   }
 }
 @media all and (min-width: 970px) and (max-width: 1169px) {
-  /* line 190, ../assets/styles/block/_tiles.scss */
+  /* line 191, ../assets/styles/block/_tiles.scss */
   .tiles__tile {
     width: 33.3333333333%;
     padding-bottom: 25%;
   }
 }
 @media all and (min-width: 1170px) and (max-width: 1500px) {
-  /* line 197, ../assets/styles/block/_tiles.scss */
+  /* line 198, ../assets/styles/block/_tiles.scss */
   .tiles__tile {
     width: 25%;
     padding-bottom: 18.75%;

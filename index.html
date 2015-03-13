@@ -9,22 +9,34 @@
     <link rel="stylesheet" href="http://fast.fonts.net/cssapi/3b2e6dd0-e910-423a-b15e-9ccfcadb3d28.css">
     <!-- Main app js-->
     <script src="/assets/bower_components/angular/angular.js"></script>
+    <script src="/assets/bower_components/angular-sanitize/angular-sanitize.js"></script>
     <!-- Fonts-->
   </head>
   <body data-ng-controller="MainCtrl as main" class="klap">
     <div class="klap__logo"></div>
     <header class="klap__header">
-      <div data-ng-click="main.toggleMenu()" class="klap__menutoggle">
-        <div data-ng-class="{'justy--active':main.states.showMenu}" class="justy"></div>
+      <div data-ng-click="main.toggleOverlay()" data-ng-hide="!main.overlays.menu.states.show" class="klap__menutoggle">
+        <div data-ng-class="{'justy--active': main.overlays.menu.states.show}" class="justy"></div>
+      </div>
+      <div data-ng-click="main.toggleOverlay('menu')" data-ng-hide="main.overlays.menu.states.show" class="klap__menutoggle">
+        <div data-ng-class="{'justy--active': main.overlays.menu.states.show}" class="justy"></div>
       </div>
     </header>
-    <div data-ng-class="{'klap__overlay--show':main.states.showMenu}" class="klap__overlay">
+    <div data-ng-class="{'klap__overlay--show': main.overlays.menu.states.show}" class="klap__overlay">
+      <div class="klap__logo"></div>
       <div class="klap__menu">
         <div class="klap__menuitem">Intro</div>
         <div class="klap__menuitem">Who we are</div>
         <div class="klap__menuitem">Cases</div>
         <div class="klap__menuitem">Contact</div>
       </div>
+    </div>
+    <div data-ng-class="{'klap__overlay--show': main.overlays.case.states.show}" class="klap__overlay">
+      <section class="container">
+        <div class="container__content">
+          <div data-ng-bind-html="main.overlays.case.html" class="container__inner"></div>
+        </div>
+      </section>
     </div>
     <section class="container container--fullscreen container--expand">
       <div class="container__bg">
@@ -74,52 +86,52 @@
           </div>
         </div>
         <div class="container__inner">
-          <div class="tiles"><a class="tiles__tile">
+          <div class="tiles"><a data-ng-click="main.toggleOverlay('case', true, 0)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 1)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 2)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 3)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 4)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 5)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 6)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 7)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 8)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 9)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 10)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 11)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 12)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 13)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 14)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
-              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a class="tiles__tile">
+              <div class="tiles__inner">Madhouse<b>Collection</b></div></a><a data-ng-click="main.toggleOverlay('case', true, 15)" class="tiles__tile">
               <figcaption class="tiles__overlay">Watch</figcaption>
               <div class="tiles__inner"><img src="http://placehold.it/450x338"></div>
               <div class="tiles__inner">Madhouse<b>Collection</b></div></a>

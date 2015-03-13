@@ -10,7 +10,7 @@
  * Main module of the application.
  */
 angular
-  .module('noerd.Klap', [])
+  .module('noerd.Klap', ['ngSanitize'])
   .run(function () {
     console.log('Main Application Run()');
   });
