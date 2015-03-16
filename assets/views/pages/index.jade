@@ -10,6 +10,8 @@ block append content
 	section.container.container--fullscreen.container--expand
 		div.container__bg
 			div.vimeo
+				//video
+					source
 				//iframe(src="https://player.vimeo.com/video/111753765?autoplay=1&loop=1", width="1500", height="642", frameborder="0", webkitallowfullscreen, mozallowfullscreen, allowfullscreen)
 
 	section.container.container--xs-expand.container--s-expand
@@ -18,7 +20,6 @@ block append content
 				div.slides(data-ng-controller="SlidesCtrl as slides" data-slides="5", data-slides-autoplay="true")
 					div.slides__cutter
 						div.slides__list(data-ng-style="slides.css")
-							//div.slides__slide(style="background-image: url('http://placehold.it/1500x500')")
 							div.slides__slide
 								img(src="http://placehold.it/1500x500")
 							div.slides__slide

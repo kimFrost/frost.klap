@@ -38,7 +38,7 @@
 			wavesurfer.css = {};
 
 
-			wavesurfer.wavesurfer.init();
+			//wavesurfer.wavesurfer.init();
 
 			// Directive functions
 			wavesurfer.getMetric = function() {
