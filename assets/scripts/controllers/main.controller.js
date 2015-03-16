@@ -126,7 +126,11 @@
 		function getOverlayContent(id) {
 			var html = '';
 			if (id !== undefined) {
-				html = '<div>Test ' + id + '</div>';
+				html += '<div>Test ' + id + '</div>';
+				html += '<div data-wavesurfer="https://ia902508.us.archive.org/5/items/testmp3testfile/mpthreetest.mp3"></div>';
+				//html += '<audio controls data-wavesurfer>';
+				//html += '<source src="https://ia902508.us.archive.org/5/items/testmp3testfile/mpthreetest.mp3" type="audio/mpeg">';
+				//html += '</audio>';
 			}
 			return html;
 		}

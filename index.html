@@ -10,6 +10,7 @@
     <!-- Main app js-->
     <script src="/assets/bower_components/angular/angular.js"></script>
     <script src="/assets/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/assets/scripts/libs/wavesurfer.min.js"></script>
     <!-- Fonts-->
   </head>
   <body data-ng-controller="MainCtrl as main" class="klap">
@@ -31,9 +32,36 @@
       </div>
     </div>
     <div data-ng-class="{'klap__overlay--show': main.overlays.case.states.show}" class="klap__overlay">
-      <section class="container">
+      <div class="klap__logo"></div>
+      <section class="container container--pushtop container--textcenter">
         <div class="container__content">
-          <div data-ng-bind-html="main.overlays.case.html" class="container__inner"></div>
+          <!--div.container__inner(data-ng-bind-html="main.overlays.case.html")-->
+          <div class="container__inner">
+            <div class="rte">
+              <h1 class="rte__headline">Madhouse<b>Collection</b></h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+          <div class="container__inner">
+            <div class="audiowave"></div>
+          </div>
+          <div class="container__inner">
+            <div class="gallery">
+              <div class="gallery__list">
+                <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
+                <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
+                <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
+                <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
+                <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
+                <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
+                <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
+                <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
+                <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
+                <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -151,5 +179,6 @@
     <script src="/assets/scripts/app.js"></script>
     <script src="/assets/scripts/controllers/main.controller.js"></script>
     <script src="/assets/scripts/controllers/slides.controller.js"></script>
+    <script src="/assets/scripts/directives/wavesurfer.directive.js"></script>
   </body>
 </html>

@@ -1,0 +1,89 @@
+
+// PARAMETERS
+
+
+
+// BLOCK
+
+.gallery {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	//overflow-x: auto;
+	//overflow-y: hidden;
+}
+
+.gallery,
+.gallery__list,
+.gallery__image {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+//--- PLACEHOLDERS -----------------------------------------------------//
+
+
+
+//--- ELEMENTS -----------------------------------------------------//
+
+.gallery__list {
+	@include transition(all 50ms ease);
+	display: block;
+	width: 9000px;
+}
+
+.gallery__image {
+	display: block;
+	float: left;
+	& + & {
+		margin-left: 20px;
+	}
+	& > img {
+
+	}
+}
+
+//--- MODIFIERS -----------------------------------------------------//
+
+
+
+//--- MEDIA QUERRIES ----------------------------------------------------------//
+
+@include mediaQueries('x-small') {
+	.gallery__list {
+		-ms-transform: translate(0, 0) !important;
+		-webkit-transform: translate(0, 0) !important;
+		transform: translate(0, 0) !important;
+		width: 100%;
+	}
+	.gallery__image {
+		width: 100%;
+		& + & {
+			margin-left: 0;
+			margin-top: 20px;
+		}
+		& > img {
+			width: 100%;
+		}
+	}
+}
+
+@include mediaQueries('small') {
+	.gallery__list {
+		-ms-transform: translate(0, 0) !important;
+		-webkit-transform: translate(0, 0) !important;
+		transform: translate(0, 0) !important;
+		width: 100%;
+	}
+	.gallery__image {
+		width: 100%;
+		& + & {
+			margin-left: 0;
+			margin-top: 20px;
+		}
+		& > img {
+			width: 100%;
+		}
+	}
+}

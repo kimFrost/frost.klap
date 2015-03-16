@@ -10,6 +10,7 @@ html(data-ng-app="noerd.Klap", lang="da")
 		// Main app js
 		script(src="/assets/bower_components/angular/angular.js")
 		script(src="/assets/bower_components/angular-sanitize/angular-sanitize.js")
+		script(src="/assets/scripts/libs/wavesurfer.min.js")
 
 		block head
 		// Fonts
@@ -20,7 +21,7 @@ html(data-ng-app="noerd.Klap", lang="da")
 
 		header.klap__header
 			//div.klap__menutoggle(data-ng-click="main.toggleOverlay()", data-ng-hide="!main.overlays.menu.states.show")
-				div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")
+					div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")
 			div.klap__menutoggle(data-ng-click="main.toggleOverlay('menu')")
 				div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")
 
@@ -33,9 +34,28 @@ html(data-ng-app="noerd.Klap", lang="da")
 				div.klap__menuitem Contact
 
 		div.klap__overlay(data-ng-class="{'klap__overlay--show': main.overlays.case.states.show}")
-			section.container
+			div.klap__logo
+			section.container.container--pushtop.container--textcenter
 				div.container__content
-					div.container__inner(data-ng-bind-html="main.overlays.case.html")
+					//div.container__inner(data-ng-bind-html="main.overlays.case.html")
+					div.container__inner
+						div.rte
+							h1.rte__headline
+								| Madhouse
+								b Collection
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+					div.container__inner
+						div.audiowave
+
+					div.container__inner
+						div.gallery
+							div.gallery__list
+								- for (var i = 0; i < 10; ++i) {
+									div.gallery__image
+										img(src="http://placehold.it/490/675")
+								- }
 
 		block body
 
@@ -48,3 +68,4 @@ html(data-ng-app="noerd.Klap", lang="da")
 		script(src="/assets/scripts/app.js")
 		script(src="/assets/scripts/controllers/main.controller.js")
 		script(src="/assets/scripts/controllers/slides.controller.js")
+		script(src="/assets/scripts/directives/wavesurfer.directive.js")
