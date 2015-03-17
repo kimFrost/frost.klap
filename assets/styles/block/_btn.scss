@@ -18,6 +18,7 @@ $_btnHeight: 26px;
 	line-height: $_btnHeight;
 	text-transform: uppercase;
 	font-family: $param_btn-font;
+	font-weight: $param_btn-font-weíght;
 	& + & {
 		//margin-left: 5px;
 	}

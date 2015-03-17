@@ -48,6 +48,7 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: 50% 50%;
+	z-index: 50;
 }
 
 .klap__menutoggle {
@@ -79,6 +80,7 @@
 	width: 100%;
 	height: 100%;
 	font-family: $param_menu-font;
+	font-weight: $param_menu-font-weight;
 	text-transform: uppercase;
 
 	display: -webkit-box;

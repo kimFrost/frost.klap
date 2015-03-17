@@ -24,25 +24,33 @@ $font_basic: "Arial",  Sans-serif;
 //$font_OpenSans: 'Open Sans', $font_basic;
 $font_proxima-regular: 'Proxima N W01 Reg', $font_basic;
 $font_proxima-xbold: 'Proxima N W01 Xbold', $font_basic;
+$font_montserrat: 'Montserrat' $font_basic;
 
-
-/* COLOR PARAMETERS */
+/* COLOR & FONT PARAMETERS */
+// MAIN
 $param_main-background: $color_matgrey !default;
 $param_main-font-color: $color_white !default;
 
-$param_menu-font: $font_proxima-xbold;
+// MENU
+$param_menu-font: $font_montserrat;
+$param_menu-font-weight: 700;
 
+// BTN
 $param_btn-color: $color_matgrey;
 $param_btn-background: $color_darkgrey;
 $param_btn-active-background: $color_white;
-$param_btn-font: $font_proxima-regular;
+$param_btn-font: $font_montserrat;
+$param_btn-font-weíght: 400;
 
+// TILES
+$param_tiles_font1: $font_montserrat;
+$param_tiles_font1-weight: 400;
+$param_tiles_font2: $font_montserrat;
+$param_tiles_font2-weight: 700;
 
-/* FONT PARAMETERS */
-$param_tiles_font1: $font_proxima-regular;
-$param_tiles_font2: $font_proxima-xbold;
-
-$param_rte-basefont: $font_proxima-regular;
+// RTE
+$param_rte-basefont: $font_montserrat;
+$param_rte-basefont-weight: 400;
 
 
 

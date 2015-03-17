@@ -9,6 +9,7 @@
   width: 100%;
   counter-reset: item;
   font-family: $param_rte-basefont;
+	font-weight: $param_rte-basefont-weight;
   color: inherit;
   & + & {
     margin-top: 40px;

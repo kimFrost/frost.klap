@@ -6,7 +6,8 @@
     <!--meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1 user-scalable=no")-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="http://fast.fonts.net/cssapi/3b2e6dd0-e910-423a-b15e-9ccfcadb3d28.css">
+    <!--link(rel='stylesheet', href='http://fast.fonts.net/cssapi/3b2e6dd0-e910-423a-b15e-9ccfcadb3d28.css')-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
     <!-- Main app js-->
     <script src="/assets/bower_components/angular/angular.js"></script>
     <script src="/assets/bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -47,8 +48,8 @@
             <div data-wavesurfer="asdsad.mp3" class="audiowave0"></div>
           </div>
           <div class="container__inner">
-            <div class="gallery">
-              <div class="gallery__list">
+            <div data-drag-container class="gallery">
+              <div data-drag class="gallery__list">
                 <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
                 <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
                 <div class="gallery__image"><img src="http://placehold.it/490/675"></div>
@@ -67,11 +68,11 @@
     </div>
     <section class="container container--fullscreen container--expand">
       <div class="container__bg">
-        <div class="vimeo">
-          <!--videosource
-          -->
-          <!--iframe(src="https://player.vimeo.com/video/111753765?autoplay=1&loop=1", width="1500", height="642", frameborder="0", webkitallowfullscreen, mozallowfullscreen, allowfullscreen)-->
-        </div>
+        <video autoplay loop muted class="video video--cover">
+          <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+          <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
+        </video>
+        <!--iframe(src="https://player.vimeo.com/video/111753765?autoplay=1&loop=1", width="1500", height="642", frameborder="0", webkitallowfullscreen, mozallowfullscreen, allowfullscreen)-->
       </div>
     </section>
     <section class="container container--xs-expand container--s-expand">
@@ -172,6 +173,22 @@
         <div class="container__inner">Our services</div>
       </div>
     </section>
+    <section class="container container--xs-expand container--s-expand">
+      <div class="container__content">
+        <div class="container__inner">
+          <div data-ng-controller="SlidesCtrl as slides" data-slides="1" data-slides-autoplay="true" class="slides">
+            <div class="slides__cutter">
+              <div data-ng-style="slides.css" class="slides__list">
+                <div class="slides__slide"><img src="http://placehold.it/1500x500"></div>
+              </div>
+            </div>
+            <div class="slides__map">
+              <div data-ng-click="slides.switchSlide(0, true)" data-ng-class="{'slides__mapitem--active': slides.checkActive(0)}" class="slides__mapitem"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="container">
       <div class="container__content">
         <div class="container__inner">Contact Klap</div>
@@ -181,5 +198,7 @@
     <script src="/assets/scripts/controllers/main.controller.js"></script>
     <script src="/assets/scripts/controllers/slides.controller.js"></script>
     <script src="/assets/scripts/directives/wavesurfer.directive.js"></script>
+    <script src="/assets/scripts/directives/dragcontainer.directive.js"></script>
+    <script src="/assets/scripts/directives/drag.directive.js"></script>
   </body>
 </html>

@@ -205,6 +205,15 @@ a.slides__slide {
 
 //--- MODIFIERS -------------------------------------------------------//
 
+.slides[data-slides="0"],
+.slides[slides="0"],
+.slides[data-slides="1"],
+.slides[slides="1"] {
+	.slides__map {
+		display: none;
+	}
+}
+
 .slides--fadeanimate {
   .slides__list {
     @include transition(none);
