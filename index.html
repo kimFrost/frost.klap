@@ -19,8 +19,8 @@
     <header class="klap__header">
       <!--div.klap__menutoggle(data-ng-click="main.toggleOverlay()", data-ng-hide="!main.overlays.menu.states.show")div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")
       -->
-      <div data-ng-click="main.toggleOverlay('menu')" class="klap__menutoggle">
-        <div data-ng-class="{'justy--active': main.overlays.menu.states.show}" class="justy"></div>
+      <div data-ng-click="main.flowToggleOverlay()" class="klap__menutoggle">
+        <div data-ng-class="{'justy--active': main.overlays.menu.states.show || main.overlays.case.states.show}" class="justy"></div>
       </div>
     </header>
     <div data-ng-class="{'klap__overlay--show': main.overlays.menu.states.show}" class="klap__overlay">
@@ -198,7 +198,6 @@
     <script src="/assets/scripts/controllers/main.controller.js"></script>
     <script src="/assets/scripts/controllers/slides.controller.js"></script>
     <script src="/assets/scripts/directives/wavesurfer.directive.js"></script>
-    <script src="/assets/scripts/directives/dragcontainer.directive.js"></script>
-    <!--script(src="/assets/scripts/directives/drag.directive.js")-->
+    <script src="/assets/scripts/directives/drag.directive.js"></script>
   </body>
 </html>

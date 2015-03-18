@@ -23,8 +23,8 @@ html(data-ng-app="noerd.Klap", lang="da")
 		header.klap__header
 			//div.klap__menutoggle(data-ng-click="main.toggleOverlay()", data-ng-hide="!main.overlays.menu.states.show")
 					div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")
-			div.klap__menutoggle(data-ng-click="main.toggleOverlay('menu')")
-				div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")
+			div.klap__menutoggle(data-ng-click="main.flowToggleOverlay()")
+				div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show || main.overlays.case.states.show}")
 
 		div.klap__overlay(data-ng-class="{'klap__overlay--show': main.overlays.menu.states.show}")
 			div.klap__logo
@@ -70,5 +70,4 @@ html(data-ng-app="noerd.Klap", lang="da")
 		script(src="/assets/scripts/controllers/main.controller.js")
 		script(src="/assets/scripts/controllers/slides.controller.js")
 		script(src="/assets/scripts/directives/wavesurfer.directive.js")
-		script(src="/assets/scripts/directives/dragcontainer.directive.js")
-		//script(src="/assets/scripts/directives/drag.directive.js")
+		script(src="/assets/scripts/directives/drag.directive.js")

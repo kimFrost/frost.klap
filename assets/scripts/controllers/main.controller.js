@@ -33,13 +33,13 @@
 		};
 		main.lockScrollTop = 0;
 		main.overlays = {
-			case: {
-				html: 'NOT SET',
+			menu: {
 				states: {
 					show: false
 				}
 			},
-			menu: {
+			case: {
+				html: 'NOT SET',
 				states: {
 					show: false
 				}
@@ -53,6 +53,7 @@
 		};
 
 		// Public functions
+		main.flowToggleOverlay = flowToggleOverlay;
 		main.toggleOverlay = toggleOverlay;
 
 		/**---------------------------------------
@@ -62,6 +63,26 @@
 		/**---------------------------------------
 		 FUNCTION LIBRARY
 		 ---------------------------------------**/
+
+		function flowToggleOverlay() {
+			// if close all active overlays, or show first available overlay in the object holder
+			var anyActive;
+			var key;
+			for (key in main.overlays) {
+				if (main.overlays[key].states.show) {
+					anyActive = true;
+				}
+			}
+			if (anyActive) {
+				closeAllOverlays();
+			}
+			else {
+				for (var key in main.overlays) {
+					main.overlays[key].states.show = true;
+					break;
+				}
+			}
+		}
 
 		function toggleOverlay(id, state, contentID) {
 			state = (state === undefined) ? 'toggle' : state;
