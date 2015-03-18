@@ -14,7 +14,7 @@
     <script src="/assets/scripts/libs/wavesurfer.min.js"></script>
     <!-- Fonts-->
   </head>
-  <body data-ng-controller="MainCtrl as main" class="klap">
+  <body data-ng-controller="MainCtrl as main" data-ng-class="{'klap--scroll-lock': main.states.lockPageScroll}" class="klap">
     <div class="klap__logo"></div>
     <header class="klap__header">
       <!--div.klap__menutoggle(data-ng-click="main.toggleOverlay()", data-ng-hide="!main.overlays.menu.states.show")div.justy(data-ng-class="{'justy--active': main.overlays.menu.states.show}")

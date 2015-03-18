@@ -16,7 +16,7 @@ html(data-ng-app="noerd.Klap", lang="da")
 		block head
 		// Fonts
 
-	body.klap(data-ng-controller="MainCtrl as main")
+	body.klap(data-ng-controller="MainCtrl as main", data-ng-class="{'klap--scroll-lock': main.states.lockPageScroll}")
 
 		div.klap__logo
 

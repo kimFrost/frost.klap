@@ -44,7 +44,7 @@ window.requestAnimFrame = (function(){
 				var metric = scope.drag.elem[0].getBoundingClientRect();
 				var childMetrics = scope.drag.child.getBoundingClientRect();
 				if (childMetrics.right < metric.right) {
-					scope.drag.metric.translateX = metric.width - childMetrics.width;
+					//scope.drag.metric.translateX = metric.width - childMetrics.width;
 				}
 			}
 

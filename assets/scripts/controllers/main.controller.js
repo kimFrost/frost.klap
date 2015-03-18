@@ -77,8 +77,8 @@
 				closeAllOverlays();
 			}
 			else {
-				for (var key in main.overlays) {
-					main.overlays[key].states.show = true;
+				for (key in main.overlays) {
+					toggleOverlay(key, true);
 					break;
 				}
 			}
@@ -113,7 +113,7 @@
 					var content = getOverlayContent(contentID);
 					main.overlays[id].html = $sce.trustAsHtml(content);
 				}
-				//main.lockScrollTop = window.pageYOffset;
+				main.lockScrollTop = window.pageYOffset;
 				for (var key in main.overlays) {
 					if (key !== id) {
 						main.overlays[key].states.show = !state;
@@ -121,11 +121,9 @@
 				}
 			}
 			else {
-				/*
 				 setTimeout(function () {
-				 window.scrollTo(0, main.lockScrollTop);
+				 	window.scrollTo(0, main.lockScrollTop);
 				 }, 50);
-				 */
 			}
 			main.overlays[id].states.show = state;
 			main.states.lockPageScroll = state;
@@ -136,12 +134,10 @@
 				main.overlays[key].states.show = false;
 			}
 			main.states.lockPageScroll = false;
-			//window.snap.scrollLock = main.states.lockPageScroll;
-			/*
 			setTimeout(function () {
 				window.scrollTo(0, main.lockScrollTop);
 			}, 50);
-			*/
+
 		}
 
 		function getOverlayContent(id) {

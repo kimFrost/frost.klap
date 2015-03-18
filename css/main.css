@@ -138,6 +138,11 @@ html {
   display: block;
 }
 
+/* line 129, ../assets/styles/block/_klap.scss */
+.klap--scroll-lock {
+  overflow: hidden;
+}
+
 /* line 8, ../assets/styles/block/_container.scss */
 .container {
   -moz-transition: -moz-transform 800ms ease;
