@@ -51,8 +51,8 @@ html(data-ng-app="noerd.Klap", lang="da")
 						div.audiowave0(data-wavesurfer="asdsad.mp3")
 
 					div.container__inner
-						div.gallery(data-drag-container)
-							div.gallery__list(data-drag)
+						div.gallery(data-drag)
+							div.gallery__list
 								- for (var i = 0; i < 10; ++i) {
 									div.gallery__image
 										img(src="http://placehold.it/490/675")
@@ -71,4 +71,4 @@ html(data-ng-app="noerd.Klap", lang="da")
 		script(src="/assets/scripts/controllers/slides.controller.js")
 		script(src="/assets/scripts/directives/wavesurfer.directive.js")
 		script(src="/assets/scripts/directives/dragcontainer.directive.js")
-		script(src="/assets/scripts/directives/drag.directive.js")
+		//script(src="/assets/scripts/directives/drag.directive.js")

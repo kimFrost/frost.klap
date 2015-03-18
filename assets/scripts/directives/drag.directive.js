@@ -38,28 +38,69 @@ window.requestAnimFrame = (function(){
 			function update() {
 				var metric = controller.getMetric();
 				var offsets = element[0].getBoundingClientRect();
+				//var children = element[0].childNodes;
+				var children = element[0].children;
+				var totalChildsWidth = 0;
+				var lastChild = element[0].lastElementChild;
+				var lastChildOffsets = lastChild.getBoundingClientRect();
 				// Only force update if one of the metrics has changes
+
+
+
+
+				// Set max translateX value in parent controller
+				controller.options.maxTranslateX = -4116;
+
+				if (metric.translateX != scope.drag.metric.translateX) {
+					scope.drag.metric.translateX = metric.translateX;
+
+					/*
+					for (var i = 0; i < children.length; i++) {
+						var child = children[i];
+						var childOffsets = child.getBoundingClientRect();
+						totalChildsWidth += childOffsets.width;
+					}
+
+					console.log('metric', metric);
+					console.log('offsets', offsets);
+					//console.log('totalChildsWidth', totalChildsWidth);
+
+					//console.log('lastChildOffsets', lastChildOffsets);
+
+					// Handle overdrag on right side
+					if (offsets.left - scope.drag.metric.translateX > totalChildsWidth) {
+						scope.drag.metric.translateX = offsets.left - scope.drag.metric.translateX;
+					}
+					*/
+
+					updateData();
+				}
+				/*
 				if (metric.pushFromTop != scope.drag.metric.pushFromTop || metric.height != scope.drag.metric.containerHeight || scope.drag.metric.height != offsets.height) {
 					scope.drag.metric.pushFromTop = metric.pushFromTop;
 					scope.drag.metric.containerHeight = metric.height;
 					scope.drag.metric.height = offsets.height;
 					updateData();
 				}
+				*/
 			}
 
 			function updateData() {
-				var value = scope.drag.metric.pushFromTop;
+				var translateX = scope.drag.metric.translateX;
+				var translateXPx = translateX + 'px';
+				/*
 				var maxPush = scope.drag.metric.containerHeight - scope.drag.metric.height;
 				if (value > maxPush) {
 					value = maxPush;
 				}
+				*/
 
 				// Js direct set style for much better performance.
-				element[0].style.mozTransform = 'translate(0px, '+ value +'px)';
-				element[0].style.msTransform = 'translate(0px, '+ value +'px)';
-				element[0].style.webkitTransform = 'translate(0px, '+ value +'px)';
-				element[0].style.OTransform  = 'translate(0px, '+ value +'px)';
-				element[0].style.transform = 'translate(0px, '+ value +'px)';
+				element[0].style.mozTransform = 'translate(' + translateXPx + ', 0)';
+				element[0].style.msTransform = 'translate(' + translateXPx + ', 0)';
+				element[0].style.webkitTransform = 'translate(' + translateXPx + ', 0)';
+				element[0].style.OTransform  = 'translate(' + translateXPx + ', 0)';
+				element[0].style.transform = 'translate(' + translateXPx + ', 0)';
 
 				/*
 				var css = {
