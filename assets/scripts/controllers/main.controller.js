@@ -1,16 +1,6 @@
 ﻿(function (undefined) {
 	'use strict';
 
-	// shim layer with setTimeout fallback
-	window.requestAnimFrame = (function () {
-		return window.requestAnimationFrame ||
-			window.webkitRequestAnimationFrame ||
-			window.mozRequestAnimationFrame ||
-			function (callback) {
-				window.setTimeout(callback, 1000 / 60);
-			};
-	})();
-
 	/**
 	 * @ngdoc overview
 	 * @name AddCard
@@ -121,9 +111,9 @@
 				}
 			}
 			else {
-				 setTimeout(function () {
-				 	window.scrollTo(0, main.lockScrollTop);
-				 }, 50);
+				setTimeout(function () {
+					window.scrollTo(0, main.lockScrollTop);
+				}, 50);
 			}
 			main.overlays[id].states.show = state;
 			main.states.lockPageScroll = state;
@@ -137,7 +127,6 @@
 			setTimeout(function () {
 				window.scrollTo(0, main.lockScrollTop);
 			}, 50);
-
 		}
 
 		function getOverlayContent(id) {
